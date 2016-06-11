@@ -95,9 +95,20 @@ Finally, we normalize all visibilities such that their sum, i.e. the total item 
 The data contain 1559 item identifiers. Those are way to many levels to be useful. Those identifiers are a combination of three letters and two numbers. Keeping just the first two letters of each identifier yields a neat categorization in drinks (*DR*), food (*FD*) and non-consumable (*NC*). In addition, we also keep the first three letters of each identifier in a separate column for added granularity of the data.
 
 #### Correlations between numerical variables
+Looking at correlations between numerical variables one notices a strong positive correlation of 0.57 between *Item_MRP* and *Item_Outlet_Sales* and a somewhat weaker negative correlation of -0.13 between *Item_Visibility* and *Item_Outlet_Sales*. This is confirmed by a principle component analysis:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/PCA.png)
+Again we notice differences between grocery stores and supermarkets. This is clearly seen in a scatter plot of sales vs. visibilities:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_Visibility.png)
 
+Looking at sales figures for various item types,
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_Type_1.png)
+we notice plenty of outliers. 
 
+Coming back to the positive correlation between *Item_MRP* and *Item_Outlet_Sales*, this is simply due to the fact that sales figures are the number of sold items times their price. Hence, dividing *Item_Outlet_Sales* by *Item_MRP* greatly reduces this correlation. As an added bonus it helps to reign in some outliers in the plot shown above:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_Type_2.png)
 
-
+#### Variable importances
+Having thus analyzed and cleaned the data we are almost ready to start building models. Before doing that, however, let's have a look at the relative importance of the predictors in building models. We do that with Random Feature Elimination (`rfe`) from the `caret` package with a random forest model. One-hot encoding of the factor variables leaves us with 121 predictors, of which only the first 13 or so should suffice to build a predictive model while avoiding over-fitting:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/RFE_Results.png)
 
 
