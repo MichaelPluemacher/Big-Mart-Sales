@@ -34,6 +34,8 @@ The original data contain five different levels for the fat content: *LF, low fa
 Further, certain types of non-consumables, i.e. those in the categories *Health and Hygiene*, *Household* and *Others* are either *Low Fat* or *Regular* according to the data. Clearly, this makes no sense. Hence, we introduce an new fat level *None* for non-consumables.
 
 #### Item weights
+Checking for missing values, we see that 2439 entries are missing in the category *Item_Weight*.
+
 
 
 	
