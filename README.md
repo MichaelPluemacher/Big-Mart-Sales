@@ -92,7 +92,9 @@ we see that the two distributions are reasonably close to each other.
 Finally, we normalize all visibilities such that their sum, i.e. the total item visibility per shop, is 100, as it should be.
 
 #### The item identifiers
+The data contain 1559 item identifiers. Those are way to many levels to be useful. Those identifiers are a combination of three letters and two numbers. Keeping just the first two letters of each identifier yields a neat categorization in drinks (*DR*), food (*FD*) and non-consumable (*NC*). In addition, we also keep the first three letters of each identifier in a separate column for added granularity of the data.
 
+#### Correlations between numerical variables
 
 
 
