@@ -25,7 +25,8 @@ The train and test data, which can be found at the link given above, contain the
 | Outlet_Type | Grocery store or some sort of supermarket|
 | Item_Outlet_Sales| Sales of product in particular store. This is the outcome variable to be predicted.|
 
-	
+## Data Exploration and Preparation
+For no particular reason I decided to tackle this challenge in R. A first analysis of the data, treatment of missing values and outliers, some feature engineering, and, finally, ordering of the predictor variables by their importance in fitting a random forest model was performed with the script `AnalyzeAndClean.R`
 
 
 
