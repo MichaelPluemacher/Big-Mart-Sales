@@ -26,7 +26,10 @@ The train and test data, which can be found at the link given above, contain the
 | Item_Outlet_Sales| Sales of product in particular store. This is the outcome variable to be predicted.|
 
 ## Data Exploration and Preparation
-For no particular reason I decided to tackle this challenge in R. A first analysis of the data, treatment of missing values and outliers, some feature engineering, and, finally, ordering of the predictor variables by their importance in fitting a random forest model was performed with the script `AnalyzeAndClean.R`
+For no particular reason I decided to tackle this challenge in R. A first analysis of the data, treatment of missing values and outliers, some feature engineering, and, finally, ordering of the predictor variables by their importance in fitting a random forest model was performed with the script `AnalyzeAndClean.R`.
+
+#### The fat content
+The original data contain five different levels for the fat content: *LF, low fat, Low Fat, reg,* and *Regular*. Clearly, *LF, low fat,* and *Low Fat* are the same, as are *reg* and *Regular*. Hence, we replace *LF* and *low fat* by *Low Fat* and *reg* by *Regular*.
 
 
 
