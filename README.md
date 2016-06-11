@@ -36,7 +36,7 @@ Further, certain types of non-consumables, i.e. those in the categories *Health 
 #### Item weights
 Checking for missing values, we see that 2439 entries are missing in the category *Item_Weight*.
 
-
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Type_1.png)
 
 	
 
