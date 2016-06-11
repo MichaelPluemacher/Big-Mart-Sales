@@ -111,4 +111,18 @@ Coming back to the positive correlation between *Item_MRP* and *Item_Outlet_Sale
 Having thus analyzed and cleaned the data we are almost ready to start building models. Before doing that, however, let's have a look at the relative importance of the predictors in building models. We do that with Random Feature Elimination (`rfe`) from the `caret` package with a random forest model. One-hot encoding of the factor variables leaves us with 121 predictors, of which only the first 13 or so should suffice to build a predictive model while avoiding over-fitting:
 ![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/RFE_Results.png)
 
+## Predictive Modelling
+In order to find a decent model to predict sales we performed an extensive search of various machine learning models available in R, in particular of those accessible through the `caret` wrapper. In the end, however, models from the `h2o` package yielded the best results for this task. In particular, deep learning neural networks `h2o.deeplearning` and gradient boosting regression trees `h2o.gbm` performed particularly well. An ensemble of various such models, constructed in `h2oEnsemble.R` forms the basis of our submission. Here, we used only the 12 most important predictors to avoid over-fitting. To include some features we may have missed with this rather small subset of predictors we supplemented the ensemble with a deep learning neural net using 23 predictors.
+
+This led to a final score of 1079.84968647.
+
+
+
+
+
+
+
+
+
+
 
