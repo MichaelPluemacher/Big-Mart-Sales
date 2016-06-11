@@ -51,6 +51,7 @@ we clearly see that there are four different price categories. To differentiate 
 
 #### Outlet size
 Some entries in the category *Outlet_Size* are empty. To tackle that problem, let's explore sales in various outlets. Counting how many sales where reported by each outlet,
+
 | Outlet_ID | number of sales |
 |-----------|----------------:|
 | OUT010 |  925 |
@@ -63,6 +64,7 @@ Some entries in the category *Outlet_Size* are empty. To tackle that problem, le
 | OUT045 | 1548 |
 | OUT046 | 1550 |
 | OUT049 | 1550 |
+
 we see that the two grocery stores *OUT010* and *OUT019* have reported far fewer sales than the supermarkets. This is neatly illustrated by a boxplot:
 ![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_OutletID.png)
 Grouping sales by the type of outlet and the years it has existed,
