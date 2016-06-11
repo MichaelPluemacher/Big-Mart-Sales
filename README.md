@@ -34,10 +34,19 @@ The original data contain five different levels for the fat content: *LF, low fa
 Further, certain types of non-consumables, i.e. those in the categories *Health and Hygiene*, *Household* and *Others* are either *Low Fat* or *Regular* according to the data. Clearly, this makes no sense. Hence, we introduce an new fat level *None* for non-consumables.
 
 #### Item weights
-Checking for missing values, we see that 2439 entries are missing in the category *Item_Weight*.
+Checking for missing values, we see that 2439 entries are missing in the category *Item_Weight*. Let's explore those weights a little.
+Looking at a boxplot of the weights grouped by the outlet identifier we see that *OUT019* and *OUT027* have not reported any weight data:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Outlet_1.png)
+Fortunately, all the wares on offer in those stores are also sold elsewhere. Assuming that each *Item_Identifier* actually identifies a unique item we can impute the missing weights by getting those weights from other stores. Fortunately, this successfully filled all the mising values:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Outlet_2.png)
+Looking at those plots one notices that all the medians, boxes and whiskers are identical to each other. Have those practice data been faked by any chance?
 
-![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Type_1.png)
 
-	
+
+
+
+
+
+
 
 
