@@ -31,7 +31,9 @@ For no particular reason I decided to tackle this challenge in R. A first analys
 #### The fat content
 The original data contain five different levels for the fat content: *LF, low fat, Low Fat, reg,* and *Regular*. Clearly, *LF, low fat,* and *Low Fat* are the same, as are *reg* and *Regular*. Hence, we replace *LF* and *low fat* by *Low Fat* and *reg* by *Regular*.
 
+Further, certain types of non-consumables, i.e. those in the categories *Health and Hygiene*, *Household* and *Others* are either *Low Fat* or *Regular* according to the data. Clearly, this makes no sense. Hence, we introduce an new fat level *None* for non-consumables.
 
+#### Item weights
 
 
 	
