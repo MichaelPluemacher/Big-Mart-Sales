@@ -81,6 +81,19 @@ Coming back to the lower sales figures for grocery stores, from the description 
 The missing values in the outlet size category concern one grocery store and two type 1 supermarkets. From what we have seen above, the grocery store clearly falls in the category *Small*. From the sales figures the type 1 supermarkets could be either *Small* or *Medium*. Since type 1 supermarkets are most often classified as small, we replace those missing size levels by *Small*. 
 
 #### Item visibilities
+We now turn our attention to the *Item_Visibility*, i.e. the percentage of display space in a store devoted to that particular item. Looking at the average visibility of items in each shop,
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Visibility_vs_OutletID.png)
+neatly confirms our earlier suspicion that grocery stores have a smaller selection of wares on offer, i.e. the average visibility per item is higher than in supermarkets. Also, we again see that the median visibilities in supermarkets on the one hand and grocery stores on the other are suspiciously similar. Is this again a hint on how those data were generated?
+
+A problem is that plenty of visibilities in the data are 0. Clearly, this is non-sensical. If an item is not physically on display in a store it cannot be sold there. The simplest approach would be to replace those zeroes by the median visibilities. However, given that those medians are pretty much all the same, this would lead to a huge spike in the distribution of visibilities, i.e. it would greatly distort those distributions. A smarter approach is to let the package `mice` impute those values by predictive mean matching. Comparing the densities of existing non-zero and imputed visibilities,
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Imputed_and_Existing_vis.png)
+we see that the two distributions are reasonably close to each other.
+
+Finally, we normalize all visibilities such that their sum, i.e. the total item visibility per shop, is 100, as it should be.
+
+#### The item identifiers
+
+
 
 
 
