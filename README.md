@@ -41,8 +41,13 @@ Fortunately, all the wares on offer in those stores are also sold elsewhere. Ass
 ![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Outlet_2.png)
 Looking at those plots one notices that all the medians, boxes and whiskers are identical to each other. Have those practice data been faked by any chance?
 
+#### Item list price
+Looking at the density of the list price of items (*Item_MRP*),
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Item_MRP_Density.png)
+we clearly see that there are four different price categories. To differentiate between them we introduced a new factor with four price levels: *Low*, *Medium*, *High*. and *Very_High*.
 
-
+#### Outlet size
+Some entries in the category *Outlet_Size* are empty. To tackle that problem, let's explore sales in various outlets.
 
 
 
