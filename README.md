@@ -41,15 +41,44 @@ Fortunately, all the wares on offer in those stores are also sold elsewhere. Ass
 ![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Weight_vs_Outlet_2.png)
 Looking at those plots one notices that all the medians, boxes and whiskers are identical to each other. Have those practice data been faked by any chance?
 
+#### Year a shop has been operating
+The sales data are for the year 2013. Also, the data contain the year in which each shop was established. For convenience, we replace that value by the number of years each shop has been in existence before 2013.
+
 #### Item list price
 Looking at the density of the list price of items (*Item_MRP*),
 ![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Item_MRP_Density.png)
 we clearly see that there are four different price categories. To differentiate between them we introduced a new factor with four price levels: *Low*, *Medium*, *High*. and *Very_High*.
 
 #### Outlet size
-Some entries in the category *Outlet_Size* are empty. To tackle that problem, let's explore sales in various outlets.
+Some entries in the category *Outlet_Size* are empty. To tackle that problem, let's explore sales in various outlets. Counting how many sales where reported by each outlet,
+| Outlet_ID | number of sales |
+|-----------|----------------:|
+| OUT010 |  925 |
+| OUT013 | 1553 |
+| OUT017 | 1543 |
+| OUT018 | 1546 |
+| OUT019 |  880 |
+| OUT027 | 1559 |
+| OUT035 | 1550 |
+| OUT045 | 1548 |
+| OUT046 | 1550 |
+| OUT049 | 1550 |
+we see that the two grocery stores *OUT010* and *OUT019* have reported far fewer sales than the supermarkets. This is neatly illustrated by a boxplot:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_OutletID.png)
+Grouping sales by the type of outlet and the years it has existed,
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_OutletType_1.png)
+or the type of outlet and its size,
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_OutletType_2.png)
+we see that there is a clear distinction in sales figures between grocery stores and supermarkets. This is confirmed if we look at sales figures across various item categories:
+![alt text](https://github.com/MichaelPluemacher/Big-Mart-Sales/blob/master/Graphs/Sales_vs_ItemType_2.png)
 
+However, the various types of supermarkets cannot be distinguished that easily. This is probably due to other factors, e.g. their location, how long they have been in operation, how well they are managed, etc. In particular, sales in the one Type 2 supermarket in the data are somewhat low. This may be due to the fact that it is still fairly new, having been founded four years ago.
 
+Coming back to the lower sales figures for grocery stores, from the description of the data it is not immediately clear why that is so. A reasonable assumption is that grocery stores are much smaller than supermarkets and therefore only have a reduced selection of wares on offer. This is confirmed by a simple count of item identifiers in each outlet.
+
+The missing values in the outlet size category concern one grocery store and two type 1 supermarkets. From what we have seen above, the grocery store clearly falls in the category *Small*. From the sales figures the type 1 supermarkets could be either *Small* or *Medium*. Since type 1 supermarkets are most often classified as small, we replace those missing size levels by *Small*. 
+
+#### Item visibilities
 
 
 
